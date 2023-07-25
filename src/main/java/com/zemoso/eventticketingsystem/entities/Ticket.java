@@ -1,5 +1,6 @@
 package com.zemoso.eventticketingsystem.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -15,6 +16,7 @@ public class Ticket {
     private int id;
 
     @ManyToOne
+    @JsonIgnore
     private Event event;
 
     @Column(name = "ticket_price")

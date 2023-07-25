@@ -21,8 +21,8 @@ public class EventTicketController {
     @Autowired
     private TicketService ticketService;
 
-    @Autowired
-    private PurchaseService purchaseService;
+//    @Autowired
+//    private PurchaseService purchaseService;
 
     @Autowired
     private SeatService seatService;
@@ -48,11 +48,11 @@ public class EventTicketController {
         return ticketService.getTicketsByEventId(eventId);
     }
 
-    // Endpoint to purchase tickets
-    @PostMapping("/purchases")
-    public Purchase purchaseTickets(@RequestBody PurchaseRequest purchaseRequest) {
-        return purchaseService.purchaseTickets(purchaseRequest);
-    }
+//    // Endpoint to purchase tickets
+//    @PostMapping("/purchases")
+//    public Purchase purchaseTickets(@RequestBody PurchaseRequest purchaseRequest) {
+//        return purchaseService.purchaseTickets(purchaseRequest);
+//    }
 
     // Endpoint to get available seats for an event
     @GetMapping("/seats/{eventId}")
