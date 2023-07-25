@@ -25,38 +25,47 @@ public class Event {
     @ManyToOne
     private Venue venue;
 
-    // Constructors, getters, and setters
+    public Event() {
+    }
+
+    public Event(int id, String eventName, Date eventDate, String eventDescription, Venue venue) {
+        this.id = id;
+        this.eventName = eventName;
+        this.eventDate = eventDate;
+        this.eventDescription = eventDescription;
+        this.venue = venue;
+    }
 
     public int getId() {
         return id;
     }
 
-    public void setId(int event_id) {
-        this.id = event_id;
+    public void setId(int eventId) {
+        this.id = eventId;
     }
 
     public String getEventName() {
         return eventName;
     }
 
-    public void setEventName(String event_name) {
-        this.eventName = event_name;
+    public void setEventName(String eventName) {
+        this.eventName = eventName;
     }
 
     public Date getEventDate() {
         return eventDate;
     }
 
-    public void setEventDate(Date event_date) {
-        this.eventDate = event_date;
+    public void setEventDate(Date eventDate) {
+        this.eventDate = eventDate;
     }
 
     public String getEventDescription() {
         return eventDescription;
     }
 
-    public void setEventDescription(String event_description) {
-        this.eventDescription = event_description;
+    public void setEventDescription(String eventDescription) {
+        this.eventDescription = eventDescription;
     }
 
     public Venue getVenue() {

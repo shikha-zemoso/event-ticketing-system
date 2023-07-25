@@ -5,9 +5,6 @@ public class WaitingListRequest {
     private int eventId;
     private int userId;
 
-    // Add any additional fields and methods as needed
-
-    // Default constructor (required for JSON serialization/deserialization)
     public WaitingListRequest() {
     }
 
@@ -16,7 +13,6 @@ public class WaitingListRequest {
         this.userId = userId;
     }
 
-    // Getters and setters for all fields
     public int getEventId() {
         return eventId;
     }

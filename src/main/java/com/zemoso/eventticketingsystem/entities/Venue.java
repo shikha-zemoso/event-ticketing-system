@@ -20,37 +20,45 @@ public class Venue {
     @Column(name = "seating_capacity")
     private int seatingCapacity;
 
-    // Constructors, getters, and setters
+    public Venue(int venueId, String venueName, String venueLocation) {
+        this.id = venueId;
+        this.venueName = venueName;
+        this.venueLocation = venueLocation;
+    }
+
+    public Venue() {
+    }
+
 
     public int getId() {
         return id;
     }
 
-    public void setId(int venue_id) {
-        this.id = venue_id;
+    public void setId(int venueId) {
+        this.id = venueId;
     }
 
     public String getVenueName() {
         return venueName;
     }
 
-    public void setVenueName(String venue_name) {
-        this.venueName = venue_name;
+    public void setVenueName(String venueName) {
+        this.venueName = venueName;
     }
 
     public String getVenueLocation() {
         return venueLocation;
     }
 
-    public void setVenueLocation(String venue_address) {
-        this.venueLocation = venue_address;
+    public void setVenueLocation(String venueAddress) {
+        this.venueLocation = venueAddress;
     }
 
     public int getSeatingCapacity() {
         return seatingCapacity;
     }
 
-    public void setSeatingCapacity(int venue_capacity) {
-        this.seatingCapacity = venue_capacity;
+    public void setSeatingCapacity(int venueCapacity) {
+        this.seatingCapacity = venueCapacity;
     }
 }

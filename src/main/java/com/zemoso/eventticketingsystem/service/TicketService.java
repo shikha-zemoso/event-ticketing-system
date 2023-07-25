@@ -18,6 +18,7 @@ public class TicketService {
     }
 
     public List<Ticket> getTicketsByEventId(int eventId) {
+        // SELECT * from Ticket where event_id = "123"
         return ticketRepository.findByEvent_Id(eventId);
     }
 }

@@ -36,14 +36,22 @@ public class Ticket {
 
     }
 
+    public Ticket(int id, Event event, double ticketPrice, String ticketType, int ticketQuantity) {
+        this.id = id;
+        this.event = event;
+        this.ticketPrice = ticketPrice;
+        this.ticketType = ticketType;
+        this.ticketQuantity = ticketQuantity;
+    }
+
     // Constructors, getters, and setters
 
     public int getId() {
         return id;
     }
 
-    public void setId(int ticket_id) {
-        this.id = ticket_id;
+    public void setId(int ticketId) {
+        this.id = ticketId;
     }
 
     public Event getEvent() {
@@ -58,23 +66,23 @@ public class Ticket {
         return ticketPrice;
     }
 
-    public void setTicketPrice(double ticket_price) {
-        this.ticketPrice = ticket_price;
+    public void setTicketPrice(double ticketPrice) {
+        this.ticketPrice = ticketPrice;
     }
 
     public String getTicketType() {
         return ticketType;
     }
 
-    public void setTicketType(String ticket_type) {
-        this.ticketType = ticket_type;
+    public void setTicketType(String ticketType) {
+        this.ticketType = ticketType;
     }
 
     public int getTicketQuantity() {
         return ticketQuantity;
     }
 
-    public void setTicketQuantity(int ticket_quantity) {
-        this.ticketQuantity = ticket_quantity;
+    public void setTicketQuantity(int ticketQuantity) {
+        this.ticketQuantity = ticketQuantity;
     }
 }

@@ -20,37 +20,45 @@ public class User {
     @Column(name = "user_phone")
     private String userPhone;
 
-    // Constructors, getters, and setters
+    public User() {
+    }
+
+    public User(int id, String userName, String userEmail, String userPhone) {
+        this.id = id;
+        this.userName = userName;
+        this.userEmail = userEmail;
+        this.userPhone = userPhone;
+    }
 
     public int getId() {
         return id;
     }
 
-    public void setId(int user_id) {
-        this.id = user_id;
+    public void setId(int userId) {
+        this.id = userId;
     }
 
     public String getUserName() {
         return userName;
     }
 
-    public void setUserName(String user_name) {
-        this.userName = user_name;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public String getUserEmail() {
         return userEmail;
     }
 
-    public void setUserEmail(String user_email) {
-        this.userEmail = user_email;
+    public void setUserEmail(String userEmail) {
+        this.userEmail = userEmail;
     }
 
     public String getUserPhone() {
         return userPhone;
     }
 
-    public void setUserPhone(String user_phone) {
-        this.userPhone = user_phone;
+    public void setUserPhone(String userPhone) {
+        this.userPhone = userPhone;
     }
 }

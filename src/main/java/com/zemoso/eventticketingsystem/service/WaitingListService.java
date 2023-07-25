@@ -9,14 +9,10 @@ import com.zemoso.eventticketingsystem.entities.User;
 import com.zemoso.eventticketingsystem.entities.WaitingList;
 import com.zemoso.eventticketingsystem.exception.EventNotFoundException;
 import com.zemoso.eventticketingsystem.exception.UserNotFoundException;
-import com.zemoso.eventticketingsystem.exception.WaitingListNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.Date;
-import java.util.List;
 
 @Service
 public class WaitingListService {
@@ -32,36 +28,6 @@ public class WaitingListService {
         this.waitingListRepository = waitingListRepository;
         this.eventRepository = eventRepository;
         this.userRepository = userRepository;
-    }
-
-    public WaitingList getWaitingListById(int waitingListId) {
-        return waitingListRepository.findById(waitingListId)
-                .orElseThrow(() -> new WaitingListNotFoundException("WaitingList not found with ID: " + waitingListId));
-    }
-
-    public WaitingList createWaitingList(WaitingList waitingList) {
-        return waitingListRepository.save(waitingList);
-    }
-
-    public WaitingList updateWaitingList(WaitingList waitingList) {
-        return waitingListRepository.save(waitingList);
-    }
-
-    public void deleteWaitingList(int waitingListId) {
-        WaitingList waitingList = getWaitingListById(waitingListId);
-        waitingListRepository.delete(waitingList);
-    }
-
-    public List<WaitingList> getAllWaitingLists() {
-        return waitingListRepository.findAll();
-    }
-
-    public List<WaitingList> getWaitingListsByEventId(int eventId) {
-        return waitingListRepository.findByEvent_Id(eventId);
-    }
-
-    public List<WaitingList> getWaitingListsByUserId(int userId) {
-        return waitingListRepository.findByUser_Id(userId);
     }
 
     public WaitingList joinWaitingList(WaitingListRequest waitingListRequest) {

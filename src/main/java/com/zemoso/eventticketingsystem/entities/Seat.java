@@ -23,8 +23,6 @@ public class Seat {
     @Column(name = "is_booked")
     private boolean isBooked;
 
-    // Constructors, getters, and setters
-
     public Seat() {
     }
 
@@ -33,12 +31,19 @@ public class Seat {
         this.seatNumber = seatNumber;
         this.isBooked = false;
     }
+
+    public Seat(Event event, int seatNumber, boolean isBooked) {
+        this.event = event;
+        this.seatNumber = seatNumber;
+        this.isBooked = isBooked;
+    }
+
     public int getId() {
         return id;
     }
 
-    public void setId(int seat_id) {
-        this.id = seat_id;
+    public void setId(int seatId) {
+        this.id = seatId;
     }
 
     public Event getEvent() {
@@ -53,15 +58,15 @@ public class Seat {
         return seatNumber;
     }
 
-    public void setSeatNumber(int seat_number) {
-        this.seatNumber = seat_number;
+    public void setSeatNumber(int seatNumber) {
+        this.seatNumber = seatNumber;
     }
 
     public boolean isIsBooked() {
         return isBooked;
     }
 
-    public void setIsBooked(boolean is_booked) {
-        this.isBooked = is_booked;
+    public void setIsBooked(boolean isBooked) {
+        this.isBooked = isBooked;
     }
 }

@@ -37,14 +37,12 @@ public class Purchase {
 
     }
 
-    // Constructors, getters, and setters
-
     public int getId() {
         return id;
     }
 
-    public void setId(int purchase_id) {
-        this.id = purchase_id;
+    public void setId(int purchaseId) {
+        this.id = purchaseId;
     }
 
     public User getUser() {
@@ -67,15 +65,15 @@ public class Purchase {
         return purchaseDate;
     }
 
-    public void setPurchaseDate(Date purchase_date) {
-        this.purchaseDate = purchase_date;
+    public void setPurchaseDate(Date purchaseDate) {
+        this.purchaseDate = purchaseDate;
     }
 
     public int getPurchaseQuantity() {
         return purchaseQuantity;
     }
 
-    public void setPurchaseQuantity(int purchase_quantity) {
-        this.purchaseQuantity = purchase_quantity;
+    public void setPurchaseQuantity(int purchaseQuantity) {
+        this.purchaseQuantity = purchaseQuantity;
     }
 }

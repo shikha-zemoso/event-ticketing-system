@@ -12,9 +12,6 @@ public class PurchaseRequest {
 
     private List<Integer> seatNumbers;
 
-    // Add any additional fields and methods as needed
-
-    // Default constructor (required for JSON serialization/deserialization)
     public PurchaseRequest() {
     }
 
@@ -26,8 +23,6 @@ public class PurchaseRequest {
         this.seatNumbers = seatNumbers;
     }
 
-
-    // Getters and setters for all fields
     public int getEventId() {
         return eventId;
     }

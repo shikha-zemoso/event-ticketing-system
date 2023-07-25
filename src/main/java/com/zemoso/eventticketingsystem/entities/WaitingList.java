@@ -35,14 +35,12 @@ public class WaitingList {
 
     }
 
-    // Constructors, getters, and setters
-
     public int getId() {
         return id;
     }
 
-    public void setId(int waitingList_id) {
-        this.id = waitingList_id;
+    public void setId(int waitingListId) {
+        this.id = waitingListId;
     }
 
     public Event getEvent() {
@@ -65,7 +63,7 @@ public class WaitingList {
         return joinDate;
     }
 
-    public void setJoinDate(Date join_date) {
-        this.joinDate = join_date;
+    public void setJoinDate(Date joinDate) {
+        this.joinDate = joinDate;
     }
 }
