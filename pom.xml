@@ -15,9 +15,13 @@
 	<description>Event Ticketing System</description>
 	<properties>
 		<java.version>17</java.version>
-		<sonar.projectKey>sonar_project_key</sonar.projectKey>
-		<sonar.organization>zemoso-int</sonar.organization>
+		<sonar.projectKey>shikha-zemoso_event-ticketing-system</sonar.projectKey>
+		<sonar.organization>shikha-zemoso</sonar.organization>
 		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
+		<sonar.sources>src/main/java</sonar.sources>
+		<sonar.language>java</sonar.language>
+		<sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>
+		<sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>
 		<maven.compiler.release>16</maven.compiler.release>
 	</properties>
 	<dependencies>
