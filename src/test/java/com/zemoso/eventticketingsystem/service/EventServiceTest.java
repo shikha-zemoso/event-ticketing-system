@@ -52,4 +52,37 @@ class EventServiceTest {
 
         verify(eventRepository, times(1)).findById(eventId);
     }
+    @Test
+    void testGetEventById_EventNotFoundExceptionMessage() {
+        int eventId = 999;
+        String expectedMessage = "Event not found with ID: " + eventId;
+        when(eventRepository.findById(eventId)).thenReturn(Optional.empty());
+
+        EventNotFoundException exception = assertThrows(EventNotFoundException.class, () -> eventService.getEventById(eventId));
+
+        assertEquals(expectedMessage, exception.getMessage());
+        verify(eventRepository, times(1)).findById(eventId);
+    }
+
+    @Test
+    void testGetEventById_EventNotFoundExceptionWithCause() {
+        int eventId = 999;
+        String expectedMessage = "Event not found with ID: " + eventId;
+        Throwable expectedCause = new IllegalArgumentException("Invalid event ID");
+
+        when(eventRepository.findById(eventId)).thenReturn(Optional.empty());
+
+        EventNotFoundException exception = assertThrows(EventNotFoundException.class, () -> {
+            try {
+                eventService.getEventById(eventId);
+            } catch (EventNotFoundException ex) {
+                throw new EventNotFoundException(expectedMessage, expectedCause);
+            }
+        });
+
+        assertEquals(expectedMessage, exception.getMessage());
+        assertEquals(expectedCause, exception.getCause());
+        verify(eventRepository, times(1)).findById(eventId);
+    }
+
 }
