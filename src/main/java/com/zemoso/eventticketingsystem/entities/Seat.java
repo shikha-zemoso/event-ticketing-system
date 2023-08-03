@@ -34,7 +34,8 @@ public class Seat {
         this.isBooked = false;
     }
 
-    public Seat(Event event, int seatNumber, boolean isBooked) {
+    public Seat(int id, Event event, int seatNumber, boolean isBooked) {
+        this.id = id;
         this.event = event;
         this.seatNumber = seatNumber;
         this.isBooked = isBooked;
@@ -64,7 +65,7 @@ public class Seat {
         this.seatNumber = seatNumber;
     }
 
-    public boolean isIsBooked() {
+    public boolean getIsBooked() {
         return isBooked;
     }
 

@@ -33,13 +33,14 @@ class SeatServiceTest {
         int eventId = 1;
         Event mockEvent = new Event(eventId, "Event Title", new Date(), "Event Description", new Venue());
         List<Seat> mockSeats = new ArrayList<>();
-        mockSeats.add(new Seat(mockEvent, 101, false));
+        mockSeats.add(new Seat(1, mockEvent, 101, false));
         when(seatRepository.findByEvent_Id(eventId)).thenReturn(mockSeats);
 
         List<Seat> result = seatService.getAvailableSeats(eventId);
 
         assertEquals(1, result.size());
         assertEquals(101, result.get(0).getSeatNumber());
-        assertEquals(false, result.get(0).isIsBooked());
+        assertEquals(false, result.get(0).getIsBooked());
+        assertEquals(1, result.get(0).getId());
     }
 }
