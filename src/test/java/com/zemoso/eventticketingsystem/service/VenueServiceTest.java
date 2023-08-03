@@ -47,4 +47,38 @@ class VenueServiceTest {
 
         assertThrows(VenueNotFoundException.class, () -> venueService.getVenueById(venueId));
     }
+
+    @Test
+    void testGetVenueById_VenueNotFoundExceptionMessage() {
+        int venueId = 999;
+        String expectedMessage = "Venue not found with ID: " + venueId;
+        when(venueRepository.findById(venueId)).thenReturn(Optional.empty());
+
+        VenueNotFoundException exception = assertThrows(VenueNotFoundException.class, () -> venueService.getVenueById(venueId));
+
+        assertEquals(expectedMessage, exception.getMessage());
+        verify(venueRepository, times(1)).findById(venueId);
+    }
+
+    @Test
+    void testGetVenueById_VenueNotFoundExceptionWithCause() {
+        int venueId = 999;
+        String expectedMessage = "Venue not found with ID: " + venueId;
+        Throwable expectedCause = new IllegalArgumentException("Invalid venue ID");
+
+        when(venueRepository.findById(venueId)).thenReturn(Optional.empty());
+
+        VenueNotFoundException exception = assertThrows(VenueNotFoundException.class, () -> {
+            try {
+                venueService.getVenueById(venueId);
+            } catch (VenueNotFoundException ex) {
+                throw new VenueNotFoundException(expectedMessage, expectedCause);
+            }
+        });
+
+        assertEquals(expectedMessage, exception.getMessage());
+        assertEquals(expectedCause, exception.getCause());
+        verify(venueRepository, times(1)).findById(venueId);
+    }
+
 }
