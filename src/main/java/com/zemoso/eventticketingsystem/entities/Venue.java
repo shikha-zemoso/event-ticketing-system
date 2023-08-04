@@ -34,10 +34,6 @@ public class Venue {
         return id;
     }
 
-    public void setId(int venueId) {
-        this.id = venueId;
-    }
-
     public String getVenueName() {
         return venueName;
     }

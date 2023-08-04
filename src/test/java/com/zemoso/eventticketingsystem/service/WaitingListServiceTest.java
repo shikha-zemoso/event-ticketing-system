@@ -15,6 +15,9 @@ import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+
+import java.sql.Timestamp;
+import java.time.Instant;
 import java.util.Date;
 import java.util.Optional;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -47,7 +50,7 @@ class WaitingListServiceTest {
 
         WaitingListRequest waitingListRequest = new WaitingListRequest(eventId, userId);
 
-        Event mockEvent = new Event(eventId, "Event A", new Date(), "Description A", new Venue());
+        Event mockEvent = new Event(eventId, "Event A",new Timestamp(Date.from(Instant.parse("2000-01-01T00:00:00.000Z")).getTime()), "Description A", new Venue());
         User mockUser = new User(userId, "John Doe", "john@example.com", "1234567890");
 
         when(eventRepository.findById(eventId)).thenReturn(Optional.of(mockEvent));

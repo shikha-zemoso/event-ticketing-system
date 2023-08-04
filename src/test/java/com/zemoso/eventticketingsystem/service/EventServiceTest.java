@@ -3,6 +3,8 @@ package com.zemoso.eventticketingsystem.service;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
+import java.time.Instant;
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.Optional;
 
@@ -32,7 +34,7 @@ class EventServiceTest {
     @Test
     void testGetEventById_EventFound() {
         int eventId = 1;
-        Event expectedEvent = new Event(eventId, "Event Title", new Date(), "Event Description", new Venue());
+        Event expectedEvent = new Event(eventId, "Event Title", Date.from(Instant.parse("2000-01-01T00:00:00.000Z")), "Event Description", new Venue());
         when(eventRepository.findById(eventId)).thenReturn(Optional.of(expectedEvent));
 
         Event actualEvent = eventService.getEventById(eventId);
@@ -42,6 +44,8 @@ class EventServiceTest {
         assertEquals(expectedEvent.getEventName(), actualEvent.getEventName());
         assertEquals(expectedEvent.getEventDescription(), actualEvent.getEventDescription());
         assertEquals(expectedEvent.getVenue(), actualEvent.getVenue());
+        assertEquals(expectedEvent.getVenue(), actualEvent.getVenue());
+        assertEquals(expectedEvent.getEventDate(), actualEvent.getEventDate());
 
         verify(eventRepository, times(1)).findById(eventId);
     }
@@ -71,20 +75,12 @@ class EventServiceTest {
     void testGetEventById_EventNotFoundExceptionWithCause() {
         int eventId = 999;
         String expectedMessage = "Event not found with ID: " + eventId;
-        Throwable expectedCause = new IllegalArgumentException("Invalid event ID");
-
         when(eventRepository.findById(eventId)).thenReturn(Optional.empty());
 
-        EventNotFoundException exception = assertThrows(EventNotFoundException.class, () -> {
-            try {
-                eventService.getEventById(eventId);
-            } catch (EventNotFoundException ex) {
-                throw new EventNotFoundException(expectedMessage, expectedCause);
-            }
-        });
+        EventNotFoundException exception = assertThrows(EventNotFoundException.class, () ->
+                eventService.getEventById(eventId));
 
         assertEquals(expectedMessage, exception.getMessage());
-        assertEquals(expectedCause, exception.getCause());
         verify(eventRepository, times(1)).findById(eventId);
     }
 

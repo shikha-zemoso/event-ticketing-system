@@ -12,9 +12,6 @@ public class PurchaseRequest {
 
     private List<Integer> seatNumbers;
 
-    public PurchaseRequest() {
-    }
-
     public PurchaseRequest(int eventId, int userId, int ticketQuantity, String ticketType, List<Integer> seatNumbers) {
         this.eventId = eventId;
         this.userId = userId;
@@ -25,10 +22,6 @@ public class PurchaseRequest {
 
     public int getEventId() {
         return eventId;
-    }
-
-    public void setEventId(int eventId) {
-        this.eventId = eventId;
     }
 
     public int getUserId() {

@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
 import java.sql.Timestamp;
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -68,7 +69,7 @@ class PurchaseServiceTest {
         }
         when(seatRepository.findByEvent_Id(eventId)).thenReturn(availableSeats);
 
-        Purchase savedPurchase = new Purchase(user, ticket, new Timestamp(new Date().getTime()), ticketQuantity);
+        Purchase savedPurchase = new Purchase(user, ticket, new Timestamp(Date.from(Instant.parse("2000-01-01T00:00:00.000Z")).getTime()), ticketQuantity);
         when(purchaseRepository.save(any(Purchase.class))).thenReturn(savedPurchase);
 
         PurchaseRequest purchaseRequest = new PurchaseRequest(eventId, userId, ticketQuantity, ticketType, seatNumbers);
@@ -76,7 +77,6 @@ class PurchaseServiceTest {
 
         assertNotNull(resultPurchase);
         assertEquals(savedPurchase.getPurchaseQuantity(), resultPurchase.getPurchaseQuantity());
-//        assertEquals(savedPurchase.getPurchaseDate(), resultPurchase.getPurchaseDate());
         assertEquals(savedPurchase.getTicket(), resultPurchase.getTicket());
         assertEquals(savedPurchase.getUser(), resultPurchase.getUser());
 
