@@ -35,16 +35,8 @@ public class PurchaseRequest {
         return userId;
     }
 
-    public void setUserId(int userId) {
-        this.userId = userId;
-    }
-
     public int getTicketQuantity() {
         return ticketQuantity;
-    }
-
-    public void setTicketQuantity(int ticketQuantity) {
-        this.ticketQuantity = ticketQuantity;
     }
 
     public String getTicketType() {
