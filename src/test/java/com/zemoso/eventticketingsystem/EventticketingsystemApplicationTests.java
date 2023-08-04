@@ -9,7 +9,7 @@ import static org.aspectj.bridge.MessageUtil.fail;
 class EventticketingsystemApplicationTests {
 
 	@Test
-	public void testMainMethod() {
+	void testMainMethod() {
 		try {
 			EventticketingsystemApplication.main(new String[] {});
 		} catch (Exception e) {

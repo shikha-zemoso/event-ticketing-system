@@ -1,6 +1,5 @@
 package com.zemoso.eventticketingsystem.controller;
 
-import com.zemoso.eventticketingsystem.controller.request.PurchaseRequest;
 import com.zemoso.eventticketingsystem.controller.request.WaitingListRequest;
 import com.zemoso.eventticketingsystem.entities.*;
 import com.zemoso.eventticketingsystem.service.*;
@@ -20,9 +19,6 @@ public class EventTicketController {
 
     @Autowired
     private TicketService ticketService;
-
-//    @Autowired
-//    private PurchaseService purchaseService;
 
     @Autowired
     private SeatService seatService;
@@ -47,12 +43,6 @@ public class EventTicketController {
     public List<Ticket> getTicketAvailability(@PathVariable int eventId) {
         return ticketService.getTicketsByEventId(eventId);
     }
-
-//    // Endpoint to purchase tickets
-//    @PostMapping("/purchases")
-//    public Purchase purchaseTickets(@RequestBody PurchaseRequest purchaseRequest) {
-//        return purchaseService.purchaseTickets(purchaseRequest);
-//    }
 
     // Endpoint to get available seats for an event
     @GetMapping("/seats/{eventId}")
