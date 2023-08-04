@@ -39,31 +39,16 @@ public class WaitingList {
         return id;
     }
 
-    public void setId(int waitingListId) {
-        this.id = waitingListId;
-    }
-
     public Event getEvent() {
         return event;
-    }
-
-    public void setEvent(Event event) {
-        this.event = event;
     }
 
     public User getUser() {
         return user;
     }
 
-    public void setUser(User user) {
-        this.user = user;
-    }
-
     public Date getJoinDate() {
         return joinDate;
     }
 
-    public void setJoinDate(Date joinDate) {
-        this.joinDate = joinDate;
-    }
 }

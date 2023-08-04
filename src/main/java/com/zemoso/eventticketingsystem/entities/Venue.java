@@ -42,23 +42,12 @@ public class Venue {
         return venueName;
     }
 
-    public void setVenueName(String venueName) {
-        this.venueName = venueName;
-    }
-
     public String getVenueLocation() {
         return venueLocation;
-    }
-
-    public void setVenueLocation(String venueAddress) {
-        this.venueLocation = venueAddress;
     }
 
     public int getSeatingCapacity() {
         return seatingCapacity;
     }
 
-    public void setSeatingCapacity(int venueCapacity) {
-        this.seatingCapacity = venueCapacity;
-    }
 }

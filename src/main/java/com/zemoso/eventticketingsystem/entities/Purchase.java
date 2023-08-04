@@ -41,39 +41,20 @@ public class Purchase {
         return id;
     }
 
-    public void setId(int purchaseId) {
-        this.id = purchaseId;
-    }
-
     public User getUser() {
         return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
     }
 
     public Ticket getTicket() {
         return ticket;
     }
 
-    public void setTicket(Ticket ticket) {
-        this.ticket = ticket;
-    }
-
     public Date getPurchaseDate() {
         return purchaseDate;
-    }
-
-    public void setPurchaseDate(Date purchaseDate) {
-        this.purchaseDate = purchaseDate;
     }
 
     public int getPurchaseQuantity() {
         return purchaseQuantity;
     }
 
-    public void setPurchaseQuantity(int purchaseQuantity) {
-        this.purchaseQuantity = purchaseQuantity;
-    }
 }

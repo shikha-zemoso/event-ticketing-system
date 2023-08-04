@@ -52,32 +52,16 @@ public class Ticket {
         return id;
     }
 
-    public void setId(int ticketId) {
-        this.id = ticketId;
-    }
-
     public Event getEvent() {
         return event;
-    }
-
-    public void setEvent(Event event) {
-        this.event = event;
     }
 
     public double getTicketPrice() {
         return ticketPrice;
     }
 
-    public void setTicketPrice(double ticketPrice) {
-        this.ticketPrice = ticketPrice;
-    }
-
     public String getTicketType() {
         return ticketType;
-    }
-
-    public void setTicketType(String ticketType) {
-        this.ticketType = ticketType;
     }
 
     public int getTicketQuantity() {

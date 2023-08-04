@@ -45,16 +45,8 @@ public class Seat {
         return id;
     }
 
-    public void setId(int seatId) {
-        this.id = seatId;
-    }
-
     public Event getEvent() {
         return event;
-    }
-
-    public void setEvent(Event event) {
-        this.event = event;
     }
 
     public int getSeatNumber() {
