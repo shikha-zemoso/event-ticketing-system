@@ -5,12 +5,14 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
 import com.zemoso.eventticketingsystem.entities.Event;
 import com.zemoso.eventticketingsystem.entities.Ticket;
 import com.zemoso.eventticketingsystem.entities.Venue;
+import com.zemoso.eventticketingsystem.exception.TicketNotFoundException;
 import com.zemoso.eventticketingsystem.repository.TicketRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -43,6 +45,9 @@ class TicketServiceTest {
         List<Ticket> result = ticketService.getTicketsByEventId(eventId);
 
         assertEquals(mockTickets, result);
+        assertEquals(mockTickets.get(0).getId(), result.get(0).getId());
+        assertEquals(mockTickets.get(0).getEvent(), result.get(0).getEvent());
+        assertEquals(mockTickets.get(0).getTicketPrice(), result.get(0).getTicketPrice());
         verify(ticketRepository, times(1)).findByEvent_Id(eventId);
     }
 }

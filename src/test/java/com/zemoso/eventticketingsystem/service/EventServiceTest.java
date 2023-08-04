@@ -39,6 +39,9 @@ class EventServiceTest {
 
         assertNotNull(actualEvent);
         assertEquals(expectedEvent.getId(), actualEvent.getId());
+        assertEquals(expectedEvent.getEventName(), actualEvent.getEventName());
+        assertEquals(expectedEvent.getEventDescription(), actualEvent.getEventDescription());
+        assertEquals(expectedEvent.getVenue(), actualEvent.getVenue());
 
         verify(eventRepository, times(1)).findById(eventId);
     }

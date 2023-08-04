@@ -58,6 +58,9 @@ class WaitingListServiceTest {
 
         assertEquals(eventId, result.getEvent().getId());
         assertEquals(userId, result.getUser().getId());
+        assertEquals(mockUser.getUserPhone(), result.getUser().getUserPhone());
+        assertEquals(mockUser.getUserName(), result.getUser().getUserName());
+        assertEquals(mockUser.getUserEmail(), result.getUser().getUserEmail());
     }
 
     @Test

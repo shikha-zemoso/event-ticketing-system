@@ -2,6 +2,7 @@ package com.zemoso.eventticketingsystem.service;
 import com.zemoso.eventticketingsystem.entities.Event;
 import com.zemoso.eventticketingsystem.entities.Seat;
 import com.zemoso.eventticketingsystem.entities.Venue;
+import com.zemoso.eventticketingsystem.exception.NotEnoughSeatsException;
 import com.zemoso.eventticketingsystem.repository.SeatRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -13,6 +14,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.*;
 
 class SeatServiceTest {
@@ -42,5 +44,7 @@ class SeatServiceTest {
         assertEquals(101, result.get(0).getSeatNumber());
         assertEquals(false, result.get(0).getIsBooked());
         assertEquals(1, result.get(0).getId());
+        assertEquals(mockEvent, result.get(0).getEvent());
     }
+
 }

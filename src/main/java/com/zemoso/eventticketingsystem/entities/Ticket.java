@@ -27,13 +27,6 @@ public class Ticket {
     @Column(name = "ticket_quantity")
     private int ticketQuantity; // current available ticket quantity
 
-    public Ticket(Event event, double ticketPrice, String ticketType, int ticketQuantity) {
-        this.event = event;
-        this.ticketPrice = ticketPrice;
-        this.ticketType = ticketType;
-        this.ticketQuantity = ticketQuantity;
-    }
-
     public Ticket() {
 
     }

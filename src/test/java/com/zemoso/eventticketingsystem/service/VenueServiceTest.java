@@ -37,6 +37,10 @@ class VenueServiceTest {
         Venue result = venueService.getVenueById(venueId);
 
         assertEquals(mockVenue, result);
+        assertEquals(mockVenue.getVenueName(), result.getVenueName());
+        assertEquals(mockVenue.getId(), result.getId());
+        assertEquals(mockVenue.getVenueLocation(), result.getVenueLocation());
+        assertEquals(mockVenue.getSeatingCapacity(), result.getSeatingCapacity());
         verify(venueRepository, times(1)).findById(venueId);
     }
 
