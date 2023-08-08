@@ -37,20 +37,12 @@ public class Purchase {
 
     }
 
-    public int getId() {
-        return id;
-    }
-
     public User getUser() {
         return user;
     }
 
     public Ticket getTicket() {
         return ticket;
-    }
-
-    public Date getPurchaseDate() {
-        return purchaseDate;
     }
 
     public int getPurchaseQuantity() {

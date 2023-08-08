@@ -35,20 +35,12 @@ public class WaitingList {
 
     }
 
-    public int getId() {
-        return id;
-    }
-
     public Event getEvent() {
         return event;
     }
 
     public User getUser() {
         return user;
-    }
-
-    public Date getJoinDate() {
-        return joinDate;
     }
 
 }
